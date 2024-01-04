@@ -11,6 +11,14 @@ Este repositorio es un espacio de colaboración para aprender desarrollo Full St
 
 1. **Clona el Repositorio**: `git clone https://github.com/cisarcode/lanparty.git`.
 2. **Crea tu Branch**: `git checkout -b usuario`.
+3. **Crea tu primer proyecto en tu carpeta de usuario**:
+ - `npm create vite@latest`
+ -  `-> [nombre_proyecto]`
+ -  `-> react`
+ -  `-> JavaScript + SWC`
+ -  `cd [nombre_proyecto]`
+ -  `npm install`
+ -  `npm run dev`  
 
 ### Trabajo Individual
 
