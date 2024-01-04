@@ -44,6 +44,8 @@ Este repositorio es un espacio de colaboración para aprender desarrollo Full St
 
 - [Enlace al Curso de React](https://fullstackopen.com/es)
 - [Full Stack Developer Roadmap](https://roadmap.sh/full-stack)
+- [Tutorial oficial de React](https://es.react.dev/learn/tutorial-tic-tac-toe)
+- [Describir la UI](https://es.react.dev/learn/describing-the-ui)
 
 ## Reuniones y Comunicación
 
