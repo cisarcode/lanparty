@@ -30,7 +30,7 @@ Este repositorio es un espacio de colaboración para aprender desarrollo Full St
 ## Estructura del Proyecto
 
 - `/miusuario`: Carpetas personales para cada colaborador.
-- `/todosjuegan`: Proyectos y desafíos grupales.
+- `/grupo`: Proyectos y desafíos grupales.
 
 ## Recursos y Material de Aprendizaje
 
