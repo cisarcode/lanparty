@@ -20,6 +20,7 @@ typings/
 
 # Optional npm cache directory
 .npm
+.vite
 
 # Optional eslint cache
 .eslintcache
