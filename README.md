@@ -18,7 +18,38 @@ Este repositorio es un espacio de colaboración para aprender desarrollo Full St
  -  `-> JavaScript + SWC`
  -  `cd [nombre_proyecto]`
  -  `npm install`
- -  `npm run dev`  
+ -  `npm run dev`
+
+### Ramas Comúnmente Utilizadas
+
+- `main` (o `master`): Esta es la rama principal donde se encuentra el código que ya está listo para producción.
+
+
+- `develop`: Esta es una rama donde se combinan las características que están en desarrollo.
+
+
+- `feature/<nombre-de-la-feature>`: Para cada nueva característica o proyecto en el que estés trabajando, puedes crear una nueva rama con el patrón `feature/<nombre-de-la-feature>`.
+
+  Por ejemplo:
+    - `feature/user-authentication`
+    - `feature/payments-integration`
+    - `feature/admin-dashboard`
+
+- `release/<nombre-del-release>`: Cuando te estés preparando para una nueva versión de producción, puedes usar esta rama.
+
+  Por ejemplo:
+    - `release/v1.0`
+    - `release/v1.1-beta`
+    - `release/v2.0`
+
+
+- `hotfix/<nombre-del-hotfix>`: Si surge un error en producción, puedes crear una rama `hotfix/<nombre-del-hotfix>` para corregirlo.
+
+  Por ejemplo:
+    - `hotfix/login-error`
+    - `hotfix/payment-bug`
+    - `hotfix/typo-in-homepage`
+
 
 ### Trabajo Individual
 
@@ -34,6 +65,12 @@ Este repositorio es un espacio de colaboración para aprender desarrollo Full St
 
 - Realiza pull requests para fusionar tus cambios en el branch principal.
 - Asegúrate de que tu código ha sido probado y revisado por otro colaborador.
+
+### Buenas Prácticas de Git
+
+- **Ramas Principales**: En Git, todo se trata de repositorios y ramas. Generalmente, en un repositorio de GitHub, se tienen dos ramas principales que no se mezclan: `main` y `develop`. La rama `main` es donde se encuentra el código que ya está listo para producción. La rama `develop`, por otro lado, es donde los programadores trabajan.
+- **Ramas Generadas Periódicamente**: Estas son las características nuevas que se implementarán en el sistema. Estas luego pueden incluirse en la rama `develop` mediante `merge`. Ejemplos de nombre: `feature-automatic-backups`, `feature-dark-mode`.
+- **Unir Ramas**: Cuando termines todas tus tareas, debes unir tu rama con la rama de desarrollo principal (`develop`), para que tu código esté disponible para el resto de los programadores. Esto se hace con el comando `git merge`.
 
 ## Estructura del Proyecto
 
