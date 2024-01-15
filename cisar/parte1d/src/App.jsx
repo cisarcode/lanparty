@@ -50,17 +50,136 @@ const VariacionA = () => {
     }
 
 
+
+
     return(
         <>
+            <div>-----------------------</div>
             <div>{left}
-                <button onClick={handleLeftClick}> Left </button>
+                <Button handleClick={handleLeftClick} text='left'/>
+
             </div>
             <div>{right}
-                <button onClick={handleRightClick}> Right </button>
+                <Button handleClick={handleRightClick} text='right'/>
             </div>
             <div>Todos los clics: {allClicks.join(' ')}</div>
             <div>Total: {total}</div>
+            <div>-----------------------</div>
+            <History allClicks={allClicks}/>
+            <div>-----------------------</div>
+            <VariacionB/>
+            <div>-----------------------</div>
+            <VariacionC/>
+            <div>-----------------------</div>
+            <VariacionD/>
         </>
+    )
+}
+
+const History = (props) => {
+    if (props.allClicks.length === 0)
+    {
+        return (
+            <div>
+                the app is used by pressing the buttons
+            </div>
+        )
+    }
+    return(
+            <div>
+                button press history: {props.allClicks.join(' ')
+            }
+            </div>
+        )
+}
+
+// Una función que devuelve una función, tipo 1
+// eslint-disable-next-line react/prop-types
+const Button = ({ handleClick, text})  => {
+    const hello = (who) =>{
+        return () => {
+            console.log('Hello ' + who)
+            console.log('-----')
+        }
+    }
+    return (
+        <div>
+            <button onClick={hello(text)}>Consola</button>
+            <button onClick={handleClick}>{text}</button>
+        </div>
+    )
+    }
+const VariacionB = () => {
+    const [value, setValue] = useState(10)
+
+    const setToValue = (newValue) => () => {
+        console.log('value now', newValue)
+        setValue(newValue)
+    }
+
+    return (
+        <div>
+            {value}
+            <button onClick={setToValue(500)}>
+                quinientos
+            </button>
+            <button onClick={setToValue(0)}>
+                reset
+            </button>
+            <button onClick={setToValue(value + 10)}>
+                increment en 10
+            </button>
+        </div>
+    )
+}
+// Una función que devuelve una función, tipo 2
+const VariacionC = () => {
+    const [value, setValue] = useState(10)
+
+    const setToValue = (newValue) => {
+        console.log('value now', newValue)
+        setValue(newValue)
+    }
+
+    return (
+        <div>
+            {value}
+            <button onClick={() => setToValue(1000)}>
+                thousand
+            </button>
+            <button onClick={() => setToValue(0)}>
+                reset
+            </button>
+            <button onClick={() => setToValue(value + 1)}>
+                increment
+            </button>
+        </div>
+    )
+}
+const Display = props => <div>{props.value}</div>
+
+const Button2 = (props) => (
+    <button onClick={props.handleClick}>
+        {props.text}
+    </button>
+)
+
+// Pasando controladores de eventos a componentes hijos
+const VariacionD = () =>{
+    const [value, setValue] = useState(10)
+
+    const setToValue = newValue => {
+        console.log('value now', newValue)
+        setValue(newValue)
+    }
+
+    return (
+        <div>
+            <Display value={value}/>
+            <Button2 handleClick={() => setToValue(300)} text="trescientos"/>
+            <Button2 handleClick={() => setToValue(0)} text="cero"/>
+            <Button2 handleClick={() => setToValue(value + 150)} text="de a 150"/>
+        </div>
     )
 }
 export default App
