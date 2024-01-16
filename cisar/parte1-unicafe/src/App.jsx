@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
+import PropTypes from "prop-types";
 
 const Button = ({ handleClick, text }) => (
     <button onClick={handleClick}>{text}</button>
 );
+
+Button.propTypes = {
+    handleClick: PropTypes.func.isRequired,
+    text: PropTypes.string.isRequired,
+};
 
 const StatisticLine = ({ text, value }) => (
     <tr>
@@ -11,7 +17,14 @@ const StatisticLine = ({ text, value }) => (
     </tr>
 );
 
+StatisticLine.propTypes = {
+    text: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+};
+
+
 const Statistics = ({ good, neutral, bad }) => {
+
     const total = good + neutral + bad;
     const average = total ? (good - bad) / total : 0;
     const positive = total ? (good / total) * 100 : 0;
@@ -32,6 +45,11 @@ const Statistics = ({ good, neutral, bad }) => {
             </tbody>
         </table>
     );
+};
+Statistics.propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
 };
 
 const App = () => {
